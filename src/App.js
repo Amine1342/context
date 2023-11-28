@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import Navbar from "./components/Navbar";
 import Profile from "./components/Profile";
+import MyContext from "./components/MyContext";
 import "./App.css";
 
 class App extends React.Component {
@@ -17,7 +18,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <Navbar />
-        <Profile />
+        <MyContext.Provider value={this.state.user}>
+          <Profile info={this.state.user} />
+        </MyContext.Provider>
       </div>
     );
   }

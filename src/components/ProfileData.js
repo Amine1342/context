@@ -1,20 +1,19 @@
 import React from "react";
 import ContentData from "./ContentData";
 
-const ProfileData = () => {
+const ProfileData = (props) => {
   return (
     <div>
       <p>
         <a
           className="btn btn-primary"
-          data-toggle="collapse"
+          data-bs-toggle="collapse"
           href="#collapseExample"
         >
-          Informations sur xxxxx ?
+          Informations sur {props.welcome.Name}
         </a>
       </p>
-
-      <ContentData />
+      <ContentData userData={props.welcome} />
     </div>
   );
 };
